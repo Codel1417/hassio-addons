@@ -4,14 +4,14 @@ FROM $BUILD_FROM
 ENV LANG C.UTF-8
 
 # Install requirements for add-on
-RUN mkdir /opt/Ombi \
+RUN "mkdir /opt/Ombi \
     && cd /opt/Ombi  \
     && wget https://github.com/tidusjar/Ombi/releases/download/v3.0.5202/linux.tar.gz \
     && tar xzf linux.tar.gz \
     && rm linux.tar.gz \
     && chmod +x Ombi \
     && apt update
-    && apt install -y libicu-dev libunwind8 libcurl4-openssl-dev
+    && apt install -y libicu-dev libunwind8 libcurl4-openssl-dev"
 
 # Copy data for add-on
 COPY run.sh /
