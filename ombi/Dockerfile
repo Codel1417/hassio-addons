@@ -10,7 +10,7 @@ RUN "mkdir /opt/Ombi \
     && tar xzf linux.tar.gz \
     && rm linux.tar.gz \
     && chmod +x Ombi \
-    && apt update
+    && apt update \
     && apt install -y libicu-dev libunwind8 libcurl4-openssl-dev"
 
 # Copy data for add-on
