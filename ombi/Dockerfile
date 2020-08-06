@@ -6,8 +6,7 @@ ENV LANG C.UTF-8
 # Install requirements for add-on
 RUN "mkdir /opt/Ombi \
     && cd /opt/Ombi  \
-    && wget https://github.com/tidusjar/Ombi/releases/download/v3.0.5202/linux.tar.gz \
-
+    && wget https://github.com/tidusjar/Ombi/releases/download/v3.0.5202/linux.tar.gz"
 
 # Copy data for add-on
 COPY run.sh /
