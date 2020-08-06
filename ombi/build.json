@@ -1,0 +1,7 @@
+{
+    "build_from": {
+      "amd64": "hassioaddons/base:8.0.1"
+    },
+    "squash": false,
+    "args": {}
+}
