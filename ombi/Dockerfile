@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 # Install requirements for add-on
 RUN echo "deb [arch=amd64,armhf] http://repo.ombi.turd.me/stable/ jessie main" | tee "/etc/apt/sources.list.d/ombi.list" \
     && wget -qO - https://repo.ombi.turd.me/pubkey.txt | apt-key add - \
-    && apt update && apt install ombi
+    && apt update && apt install -y ombi
 
 # Copy data for add-on
 COPY run.sh /
