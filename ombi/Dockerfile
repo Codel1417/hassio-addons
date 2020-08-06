@@ -4,11 +4,10 @@ FROM $BUILD_FROM
 ENV LANG C.UTF-8
 
 # Install requirements for add-on
-RUN echo "deb [arch=amd64,armhf] http://repo.ombi.turd.me/stable/ jessie main" | sudo tee "/etc/apt/sources.list.d/ombi.list" \
-    && wget -qO - https://repo.ombi.turd.me/pubkey.txt | sudo apt-key add - \
-    && sudo apt update && sudo apt install ombi \
-    && sudo rm /etc/systemd/system/ombi.service \
-    && sudo systemctl daemon-reload
+RUN echo "deb [arch=amd64,armhf] http://repo.ombi.turd.me/stable/ jessie main" | tee "/etc/apt/sources.list.d/ombi.list" \
+    && wget -qO - https://repo.ombi.turd.me/pubkey.txt | apt-key add - \
+    && apt update && sudo apt install ombi \
+    && rm /etc/systemd/system/ombi.service
 
 # Copy data for add-on
 COPY run.sh /
