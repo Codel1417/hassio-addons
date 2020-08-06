@@ -9,7 +9,6 @@ RUN echo "deb [arch=amd64,armhf] http://repo.ombi.turd.me/stable/ jessie main" |
     && sudo apt update && sudo apt install ombi \
     && sudo rm /etc/systemd/system/ombi.service \
     && sudo systemctl daemon-reload
-run
 
 # Copy data for add-on
 COPY run.sh /
