@@ -1,13 +1,21 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ENV LANG C.UTF-8
+ENV \
+    LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
 
 # Install requirements for add-on
 RUN "mkdir /opt/Ombi \
     && cd /opt/Ombi  \
     && apt-get update \
-    && apt-get install -y libicu-dev libunwind8 libcurl4-openssl-dev wget tar \
+    && apt-get install -y \
+        libicu-dev \
+        libunwind8 \
+        libcurl4-openssl-dev \
+        wget \
+        tar \
     && wget https://github.com/tidusjar/Ombi/releases/download/v3.0.5202/linux.tar.gz \
     && tar xzf linux.tar.gz \
     && rm linux.tar.gz \
