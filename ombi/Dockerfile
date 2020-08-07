@@ -19,7 +19,8 @@ RUN \
     && cd /opt/Ombi  \
     && wget https://github.com/tidusjar/Ombi/releases/download/v3.0.5202/linux.tar.gz \
     && tar xzf linux.tar.gz \
-    && chmod +x Ombi
+    && chmod +x Ombi \
+    && rm linux.tar.gz
 
 
 # Copy data for add-on
