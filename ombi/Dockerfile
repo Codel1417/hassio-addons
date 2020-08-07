@@ -18,7 +18,6 @@ RUN "apt-get install -y --no-install-recommends \
     && apt-get update \
     && wget https://github.com/tidusjar/Ombi/releases/download/v3.0.5202/linux.tar.gz \
     && tar xzf linux.tar.gz \
-    && rm linux.tar.gz \
     && chmod +x Ombi"
 
 
