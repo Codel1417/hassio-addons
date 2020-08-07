@@ -1,6 +1,6 @@
 {
     "name": "Ombi",
-    "version": "0.1",
+    "version": "3.0.5202",
     "slug": "ombi",
     "description": "Ombi is a self-hosted web application that automatically gives your shared Plex or Emby users the ability to request content by themselves! Ombi can be linked to multiple TV Show and Movie DVR tools to create a seamless end-to-end experience for your users.",
     "url": "https://github.com/Codel1417/hassio-addons",
