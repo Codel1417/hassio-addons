@@ -8,19 +8,14 @@ ENV \
 ARG oldVolume="     - ./web:/app"
 ARG newVolume="     - /data:/app"
 # Install requirements for add-on
-RUN \
-    apk update \
-    && apk add bash py-pip python-dev libffi-dev openssl-dev gcc libc-dev make git \
-    && curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
-    && chmod +x /usr/local/bin/docker-compose \
-    && git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
-    && cd TheSpaghettiDetective \
-    #&& sed -i "s/${oldVolume}/${newVolume}" docker-compose.yaml \
-    && sed 's#$"'${oldVolume}'"${newVolume}#g' docker-compose.yaml \
-    && sudo docker-compose up -d \
-    && cd .. \
-    && rm -R ./TheSpaghettiDetective
-
+RUN apk update 
+RUN apk add bash py-pip python-dev libffi-dev openssl-dev gcc libc-dev make git 
+RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 
+RUN chmod +x /usr/local/bin/docker-compose 
+RUN git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git 
+RUN cd TheSpaghettiDetective 
+RUN sed 's#$"'${oldVolume}'"${newVolume}#g' docker-compose.yaml 
+RUN sudo docker-compose up -d
 # Copy data for add-on
 COPY run.sh /
 RUN chmod a+x /run.sh
