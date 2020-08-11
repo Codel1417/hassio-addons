@@ -5,14 +5,13 @@ CONFIG_PATH=/data/options.json
 # copy options to bash
 IP=$(jq --raw-output '.ip // empty' $CONFIG_PATH)
 PORT=$(jq --raw-output '.port // empty' $CONFIG_PATH)
-KEY=$(jq --raw-output '.key // empty' $CONFIG_PATH)
+BASE64KEY=$(jq --raw-output '.base64 key // empty' $CONFIG_PATH)
 LOCALIP=10.0.0.223
 USERNAME=$(jq --raw-output '.username // empty' $CONFIG_PATH)
 
-cat $CONFIG_PATH
 #install key
 mkdir ~/.ssh || true
-echo $KEY | tee ~/.ssh/id_rsa
+echo $BASE64KEY| openssl base64 -A -d | tee ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
 set -x # activate debugging from here
