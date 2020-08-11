@@ -13,5 +13,10 @@
             "username": "null",
             "key": "key"
     },
-    "schema": {}
+    "schema": {
+        "ip": "url",
+        "port": "port",
+        "username": "str",
+        "key": "str"
+    }
 }
