@@ -1,6 +1,6 @@
 {
     "name": "SSH Tunnel",
-    "version": "0.6",
+    "version": "0.7",
     "slug": "sshtunnel",
     "description": "SSH remote",
     "url": "https://github.com/Codel1417/hassio-addons",
@@ -17,6 +17,6 @@
         "ip": "str",
         "port": "port",
         "username": "str",
-        "key": "str"
+        "base64_key": "str"
     }
 }
