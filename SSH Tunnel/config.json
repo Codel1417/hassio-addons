@@ -14,7 +14,7 @@
             "key": "key"
     },
     "schema": {
-        "ip": "url",
+        "ip": "str",
         "port": "port",
         "username": "str",
         "key": "str"
