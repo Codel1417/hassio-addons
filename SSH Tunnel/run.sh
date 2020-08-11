@@ -17,5 +17,5 @@ chmod 600 ~/.ssh/id_rsa
 set -x # activate debugging from here
 #while false
 #do
-    ssh -vvv -f -N -T -p $PORT -R 443:$LOCALIP:443 -R 80:$LOCALIP:80  $USERNAME@$IP
+    ssh -f -N -T -p $PORT -R 443:$LOCALIP:443 -R 80:$LOCALIP:80  $USERNAME@$IP
 #done
