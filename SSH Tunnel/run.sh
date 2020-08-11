@@ -5,7 +5,7 @@ CONFIG_PATH=/data/options.json
 # copy options to bash
 IP=$(jq --raw-output '.ip // empty' $CONFIG_PATH)
 PORT=$(jq --raw-output '.port // empty' $CONFIG_PATH)
-BASE64KEY=$(jq --raw-output '.base64 key // empty' $CONFIG_PATH)
+BASE64KEY=$(jq --raw-output '.base64_key // empty' $CONFIG_PATH)
 LOCALIP=10.0.0.223
 USERNAME=$(jq --raw-output '.username // empty' $CONFIG_PATH)
 
