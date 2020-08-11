@@ -1,0 +1,17 @@
+{
+    "name": "SSH Tunnel",
+    "version": "0.1",
+    "slug": "sshtunnel",
+    "description": "SSH remote",
+    "url": "https://github.com/Codel1417/hassio-addons",
+    "arch": ["armhf", "amd64"],
+    "startup": "application",
+    "boot": "auto",
+    "options": {
+            "ip": "null",
+            "port": "22",
+            "username": "null",
+            "key": "key"
+    },
+    "schema": {}
+}
