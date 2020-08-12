@@ -11,7 +11,7 @@ USERNAME=$(jq --raw-output '.username // empty' $CONFIG_PATH)
 
 #install key
 mkdir ~/.ssh || true
-echo $BASE64KEY |  python -m base64 -d | tee ~/.ssh/id_rsa
+echo $BASE64KEY |  python3 -m base64 -d | tee ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
 set -x # activate debugging from here
