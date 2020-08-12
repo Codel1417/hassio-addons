@@ -7,7 +7,7 @@ ENV \
     LC_ALL=en_US.UTF-8
 
 # Install requirements for add-on
-RUN apk add --no-cache openssh jq openssl
+RUN apk add --no-cache openssh jq python
 
 # Copy data for add-on
 COPY run.sh /
