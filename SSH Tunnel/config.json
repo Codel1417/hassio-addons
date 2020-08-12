@@ -1,6 +1,6 @@
 {
     "name": "SSH Tunnel",
-    "version": "0.24",
+    "version": "0.25",
     "slug": "sshtunnel",
     "description": "SSH tunnel for the Nginx Proxy Manager Addon",
     "url": "https://github.com/Codel1417/hassio-addons",
@@ -11,12 +11,14 @@
             "ip": "null",
             "port": "22",
             "username": "null",
-            "base64_key": "null"
+            "base64_key": "null",
+            "local_ip": "null"
     },
     "schema": {
         "ip": "str",
         "port": "port",
         "username": "str",
-        "base64_key": "str"
+        "base64_key": "str",
+        "local_ip": "str"
     }
 }
