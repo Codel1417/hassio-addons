@@ -6,7 +6,7 @@ CONFIG_PATH=/data/options.json
 IP=$(jq --raw-output '.ip // empty' $CONFIG_PATH)
 PORT=$(jq --raw-output '.port // empty' $CONFIG_PATH)
 BASE64KEY=$(jq --raw-output '.base64_key // empty' $CONFIG_PATH)
-LOCALIP=a0d7b954_nginxproxymanager
+LOCALIP=localhost
 USERNAME=$(jq --raw-output '.username // empty' $CONFIG_PATH)
 
 #install key
