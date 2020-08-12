@@ -11,8 +11,10 @@ USERNAME=$(jq --raw-output '.username // empty' $CONFIG_PATH)
 
 #install key
 mkdir ~/.ssh || true
-echo -n $BASE64KEY | base64 -di | sed -e s/base64: invalid input//g -i * | tee ~/.ssh/id_rsa
+echo -n $BASE64KEY | base64 -di | grep -v "Base64" | tee ~/.ssh/id_rsa
 #strip base64 errors
+
+
 
 chmod 600 ~/.ssh/id_rsa
 
