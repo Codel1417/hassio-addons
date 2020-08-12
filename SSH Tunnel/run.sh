@@ -26,5 +26,6 @@ set -x # activate debugging from here
 while true
 do
     ssh -v -o StrictHostKeyChecking=no -o ExitOnForwardFailure=yes -N -T -p $PORT -R 443:$LOCALIP:443 -R 80:$LOCALIP:80  $USERNAME@$IP
+    echo "Sleeping for 30 seconds"
     sleep 30 # wait 30 seconds before reconnecting
 done
