@@ -1,8 +1,8 @@
 {
     "name": "SSH Tunnel",
-    "version": "0.22",
+    "version": "0.23",
     "slug": "sshtunnel",
-    "description": "SSH remote",
+    "description": "SSH tunnel for the Nginx Proxy Manager Addon",
     "url": "https://github.com/Codel1417/hassio-addons",
     "arch": ["armhf", "amd64"],
     "startup": "application",

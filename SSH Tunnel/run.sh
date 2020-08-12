@@ -6,12 +6,12 @@ CONFIG_PATH=/data/options.json
 IP=$(jq --raw-output '.ip // empty' $CONFIG_PATH)
 PORT=$(jq --raw-output '.port // empty' $CONFIG_PATH)
 BASE64KEY=$(jq --raw-output '.base64_key // empty' $CONFIG_PATH)
-LOCALIP=10.0.0.223
+LOCALIP=a0d7b954_nginxproxymanager
 USERNAME=$(jq --raw-output '.username // empty' $CONFIG_PATH)
 
 #install key
 mkdir ~/.ssh || true
-echo -n $BASE64KEY | base64 -di | grep -v "Base64" | tee ~/.ssh/id_rsa
+echo -n $BASE64KEY | base64 -di | grep -v "Base64" | tee ~/.ssh/id_rsa > /dev/null
 #strip base64 errors
 
 chmod 700 ~/.ssh
