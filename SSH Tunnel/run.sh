@@ -3,7 +3,7 @@ set -e
 
 CONFIG_PATH=/data/options.json
 # copy options to bash
-IP=$(jq --raw-output '.ip // empty' $CONFIG_PATH)
+IP=$(jq --raw-output '.remote_ip // empty' $CONFIG_PATH)
 PORT=$(jq --raw-output '.port // empty' $CONFIG_PATH)
 BASE64KEY=$(jq --raw-output '.base64_key // empty' $CONFIG_PATH)
 LOCALIP=$(jq --raw-output '.local_ip // empty' $CONFIG_PATH)
@@ -22,7 +22,9 @@ eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa
 
 set -x # activate debugging from here
-#while false
-#do
+
+while true
+do
     ssh -v -o StrictHostKeyChecking=no -o ExitOnForwardFailure=yes -N -T -p $PORT -R 443:$LOCALIP:443 -R 80:$LOCALIP:80  $USERNAME@$IP
-#done
+    sleep 30 # wait 30 seconds before reconnecting
+done
