@@ -14,6 +14,7 @@ mkdir ~/.ssh || true
 echo -n $BASE64KEY | base64 -di | grep -v "Base64" | tee ~/.ssh/id_rsa
 #strip base64 errors
 
+chmod 700 ~/.ssh
 chmod 600 ~/.ssh/id_rsa
 
 #register key
@@ -23,5 +24,5 @@ ssh-add ~/.ssh/id_rsa
 set -x # activate debugging from here
 #while false
 #do
-    ssh -vv -f -N -T -p $PORT -R 443:$LOCALIP:443 -R 80:$LOCALIP:80  $USERNAME@$IP
+    ssh -v -o StrictHostKeyChecking=no -f -N -T -p $PORT -R 443:$LOCALIP:443 -R 80:$LOCALIP:80  $USERNAME@$IP
 #done
