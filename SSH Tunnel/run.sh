@@ -24,5 +24,5 @@ ssh-add ~/.ssh/id_rsa
 set -x # activate debugging from here
 #while false
 #do
-    ssh -v -o StrictHostKeyChecking=no -f -N -T -p $PORT -R 443:$LOCALIP:443 -R 80:$LOCALIP:80  $USERNAME@$IP
+    ssh -v -o StrictHostKeyChecking=no -o ExitOnForwardFailure=yes -N -T -p $PORT -R 443:$LOCALIP:443 -R 80:$LOCALIP:80  $USERNAME@$IP
 #done
