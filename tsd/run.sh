@@ -1,6 +1,7 @@
 #!/bin/bash
 # https://stackoverflow.com/questions/32076878/logging-solution-for-multiple-containers-running-on-same-host
 dockerd & 
+sleep 30
 cd ~/TheSpaghettiDetective 
 docker-compose up -d
 
