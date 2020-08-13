@@ -12,6 +12,7 @@ RUN \
     cd ~ \
     && apk add --no-cache \
         bash \
+        python3 \
         py-pip \
         libffi-dev \
         openssl-dev \
