@@ -14,7 +14,9 @@ RUN \
     && apt install -y mono-complete nuget git libicu63 libssl1.1 dotnet-sdk-3.1
 
 #build jackett from source
-RUN git clone https://github.com/Jackett/Jackett.git \
+RUN \
+    cd ~ \
+    && git clone https://github.com/Jackett/Jackett.git \
     && cd Jackett/src \
     && dotnet publish Jackett.Server -f netcoreapp3.1 --self-contained -r linux-x64 -c Debug
 
