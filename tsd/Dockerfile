@@ -17,7 +17,8 @@ RUN \
         gcc \
         git \
         make \
-        libc-dev
+        libc-dev \
+        curl
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing --allow-untrusted \
     sd
 RUN \
