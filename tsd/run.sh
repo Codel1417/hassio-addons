@@ -2,7 +2,7 @@
 # https://stackoverflow.com/questions/32076878/logging-solution-for-multiple-containers-running-on-same-host
 
 cd ~/TheSpaghettiDetective 
-docker docker-compose up -d
+docker-compose up -d
 
 names=$(docker ps --format "{{.Names}}")
 echo "tailing $names"
