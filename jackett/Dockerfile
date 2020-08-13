@@ -10,12 +10,12 @@ ENV \
 RUN apk add --no-cache git icu-libs krb5-libs libintl libssl1.1 libstdc++ lttng-ust numactl zlib \
 
 #install mono
-RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
+#RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 #build jackett from source
 RUN git clone https://github.com/Jackett/Jackett.git \
     && cd Jackett/src \
-    && dotnet publish Jackett.Server -f netcoreapp3.1 --self-contained -r linux-x64 -c Debug # takes care of everything \
+    && dotnet publish Jackett.Server -f netcoreapp3.1 --self-contained -r linux-x64 -c Debug
 
 
 # Copy data for add-on
