@@ -12,7 +12,7 @@ RUN \
     cd ~ \
     && apk add --no-cache \
         bash \
-        python3 \
+        python3-dev \
         py-pip \
         libffi-dev \
         openssl-dev \
@@ -23,7 +23,7 @@ RUN \
         curl \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing --allow-untrusted \
         sd
-RUN pip install docker-compose
+RUN pip install --quiet docker-compose~=1.23.
 RUN git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
     && cd TheSpaghettiDetective 
 RUN sd $oldVolume $newVolume docker-compose.yaml 
