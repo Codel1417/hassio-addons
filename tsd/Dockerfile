@@ -26,7 +26,7 @@ RUN chmod +x /usr/local/bin/docker-compose \
     && git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
     && cd TheSpaghettiDetective 
 RUN sd $oldVolume $newVolume docker-compose.yaml 
-RUN sudo docker-compose up -d
+RUN docker-compose up -d
 # Copy data for add-on
 COPY run.sh /
 RUN chmod a+x /run.sh
