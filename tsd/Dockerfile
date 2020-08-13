@@ -9,7 +9,8 @@ ARG oldVolume="     - ./web:/app"
 ARG newVolume="     - /data:/app"
 # Install requirements for add-on
 RUN \
-    apk add --no-cache \
+    cd ~ \
+    && apk add --no-cache \
         bash \
         py-pip \
         libffi-dev \
@@ -21,8 +22,8 @@ RUN \
         curl \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing --allow-untrusted \
         sd
-RUN pip install docker-compose \
-    && git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
+RUN pip install docker-compose
+RUN git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
     && cd TheSpaghettiDetective 
 RUN sd $oldVolume $newVolume docker-compose.yaml 
 RUN docker-compose up -d
