@@ -10,10 +10,7 @@ ENV \
 RUN apk add --no-cache git icu-libs krb5-libs libintl libssl1.1 libstdc++ lttng-ust numactl zlib \
 
 #install mono
-RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing && \
-    apk add --no-cache --virtual=.build-dependencies ca-certificates && \
-    cert-sync /etc/ssl/certs/ca-certificates.crt && \
-    apk del .build-dependencies
+RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 #build jackett from source
 RUN git clone https://github.com/Jackett/Jackett.git \
