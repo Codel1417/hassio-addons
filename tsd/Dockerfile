@@ -28,7 +28,7 @@ RUN pip3 install --no-cache-dir "docker-compose==1.24.0"
 RUN git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
     && cd TheSpaghettiDetective 
 RUN sd $oldVolume $newVolume docker-compose.yaml 
-RUN docker-compose up --no-start 
+
 # Copy data for add-on
 COPY run.sh /
 RUN chmod a+x /run.sh
