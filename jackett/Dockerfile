@@ -6,7 +6,7 @@ ENV \
 
 
 #install Prerequisites 
-RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
+RUN apt-get update && apt-get install -y apt-transport-https
 RUN apt install mono-complete nuget msbuild dotnet-sdk-3.1 git libicu63 libssl1.1
 
 #build jackett from source
