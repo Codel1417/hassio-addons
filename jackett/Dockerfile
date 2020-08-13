@@ -24,7 +24,11 @@ RUN \
     && cd ~ \
     && git clone https://github.com/Jackett/Jackett.git \
     && cd Jackett/src \
-    && dotnet publish Jackett.Server -f netcoreapp3.1 --self-contained -r linux-x64 -c Debug
+    && dotnet publish Jackett.Server \
+        -f netcoreapp3.1 \
+        --self-contained \
+        -r linux-x64 \
+        -c Debug
 
 # Copy data for add-on
 COPY run.sh /
