@@ -8,15 +8,15 @@ ENV \
 ARG oldVolume="     - ./web:/app"
 ARG newVolume="     - /data:/app"
 # Install requirements for add-on
-RUN apk add -no-cache bash  
-RUN apk add -no-cache py-pip
-RUN apk add -no-cache python-dev
-RUN apk add -no-cache libffi-dev
-RUN apk add -no-cache openssl-dev
-RUN apk add -no-cache gcc
-RUN apk add -no-cache git
-RUN apk add -no-cache make
-RUN apk add -no-cache libc-dev
+RUN apk add --no-cache bash  
+RUN apk add --no-cache py-pip
+RUN apk add --no-cache python-dev
+RUN apk add --no-cache libffi-dev
+RUN apk add --no-cache openssl-dev
+RUN apk add --no-cache gcc
+RUN apk add --no-cache git
+RUN apk add --no-cache make
+RUN apk add --no-cache libc-dev
 
 RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 
 RUN chmod +x /usr/local/bin/docker-compose 
