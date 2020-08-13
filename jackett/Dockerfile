@@ -1,4 +1,4 @@
-ARG BUILD_FROM=debian:latest
+ARG BUILD_FROM=debian:stable
 FROM $BUILD_FROM
 
 ENV \
