@@ -1,4 +1,4 @@
-FROM debian:stable
+FROM debian:buster
 ENV \
     LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
@@ -7,7 +7,7 @@ ENV \
 
 #install Prerequisites 
 RUN apt-get update && apt-get install -y apt-transport-https
-RUN apt install mono-complete nuget msbuild dotnet-sdk-3.1 git libicu63 libssl1.1
+RUN apt install -y mono-complete nuget msbuild dotnet-sdk-3.1 git libicu63 libssl1.1
 
 #build jackett from source
 RUN git clone https://github.com/Jackett/Jackett.git \
