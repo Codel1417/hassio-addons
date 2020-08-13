@@ -1,6 +1,4 @@
-ARG BUILD_FROM=debian:stable
-FROM $BUILD_FROM
-
+FROM debian:stable
 ENV \
     LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
