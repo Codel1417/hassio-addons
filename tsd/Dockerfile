@@ -10,7 +10,6 @@ ARG newVolume="     - /data:/app"
 # Install requirements for add-on
 RUN apk add --no-cache bash  
 RUN apk add --no-cache py-pip
-RUN apk add --no-cache python-dev
 RUN apk add --no-cache libffi-dev
 RUN apk add --no-cache openssl-dev
 RUN apk add --no-cache gcc
