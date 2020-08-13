@@ -9,9 +9,9 @@ ENV \
 RUN apt-get update && apt-get install -y apt-transport-https wget
 RUN \
     wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
-    && dpkg -i packages-microsoft-prod.deb
-RUN apt install -y mono-complete nuget git libicu63 libssl1.1
-RUN apt update && apt install -y dotnet-sdk-3.1
+    && dpkg -i packages-microsoft-prod.deb \
+    && apt update \
+    && apt install -y mono-complete nuget git libicu63 libssl1.1 dotnet-sdk-3.1
 
 #build jackett from source
 RUN git clone https://github.com/Jackett/Jackett.git \
