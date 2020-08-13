@@ -1,4 +1,4 @@
-ARG BUILD_FROM
+ARG debian:latest
 FROM $BUILD_FROM
 
 ENV \
@@ -6,11 +6,9 @@ ENV \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8
 
-#Jackett dependentcies
-RUN apk add --no-cache git icu-libs krb5-libs libintl libssl1.1 libstdc++ lttng-ust numactl zlib \
 
-#install mono
-#RUN apk add --no-cache mono --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
+#install Prerequisites 
+RUN apt install mono-complete nuget msbuild dotnet-sdk-3.1 git libicu63 libssl1.1
 
 #build jackett from source
 RUN git clone https://github.com/Jackett/Jackett.git \
