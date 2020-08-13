@@ -1,5 +1,4 @@
-ARG BUILD_FROM=docker:stable
-FROM $BUILD_FROM
+FROM docker:stable-dind
 
 ENV \
     LANG=en_US.UTF-8 \
@@ -22,12 +21,12 @@ RUN \
         libc-dev \
         curl \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing --allow-untrusted \
-        sd
-RUN pip3 install --no-cache-dir --upgrade pip
-RUN pip3 install --no-cache-dir "docker-compose==1.24.0"
-RUN git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
-    && cd TheSpaghettiDetective 
-RUN sd $oldVolume $newVolume docker-compose.yaml 
+        sd \
+    && pip3 install --no-cache-dir --upgrade pip \
+    && pip3 install --no-cache-dir "docker-compose==1.24.0" \
+    && git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
+    && cd TheSpaghettiDetective \
+    && sd $oldVolume $newVolume docker-compose.yaml 
 
 # Copy data for add-on
 COPY run.sh /
