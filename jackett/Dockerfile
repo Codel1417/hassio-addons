@@ -7,7 +7,13 @@ ENV \
 
 #install Prerequisites 
 RUN apt-get update && apt-get install -y apt-transport-https
-RUN apt install -y mono-complete nuget msbuild dotnet-sdk-3.1 git libicu63 libssl1.1
+RUN apt install -y mono-complete 
+RUN apt install -y nuget 
+RUN apt install -y msbuild
+RUN apt install -y dotnet-sdk-3.1 
+RUN apt install -y git 
+RUN apt install -y libicu63 
+RUN apt install -y libssl1.1
 
 #build jackett from source
 RUN git clone https://github.com/Jackett/Jackett.git \
