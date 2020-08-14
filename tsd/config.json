@@ -1,6 +1,6 @@
 {
     "name": "The Spaghetti Detective",
-    "version": "0.1",
+    "version": "0.2",
     "slug": "tsd",
     "description": "The Spaghetti Detective constantly watches your prints when you are not.",
     "url": "https://github.com/Codel1417/hassio-addons",
