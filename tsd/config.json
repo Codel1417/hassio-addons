@@ -9,7 +9,6 @@
     "boot": "auto",
     "webui": "http://[HOST]:[PORT:3334]/",
     "options": {},
-    "full_access": "true",
     "ports": {
         "3334/tcp": 3334 
     },
