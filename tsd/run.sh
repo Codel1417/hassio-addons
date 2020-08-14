@@ -7,4 +7,7 @@ pid=$!
 cd ~/TheSpaghettiDetective
 docker-compose up
 
-wait $pid
+while true
+do
+    wait $pid
+done
