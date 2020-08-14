@@ -15,9 +15,6 @@
     "ports_description": {
         "3334/tcp": "Web UI"
     },
-    "privileged": [
-        "NET_ADMIN"
-    ],
     "schema": {},
     "full_access": "true"
 }
