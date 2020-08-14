@@ -18,5 +18,6 @@
     "privileged": [
         "NET_ADMIN"
     ],
-    "schema": {}
+    "schema": {},
+    "full_access": "true"
 }
