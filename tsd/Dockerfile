@@ -27,6 +27,8 @@ RUN \
     && git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
     && cd TheSpaghettiDetective \
     && sd $oldVolume $newVolume docker-compose.yaml 
+    && rm -fr /var/run/docker.sock
+
 
 # Copy data for add-on
 COPY run.sh /
