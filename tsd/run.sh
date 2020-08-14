@@ -1,3 +1,4 @@
-#!/bin/bash
+#!//usr/local/bin/docker-entrypoint.sh
 # https://stackoverflow.com/questions/32076878/logging-solution-for-multiple-containers-running-on-same-host
-dockerd-entrypoint.sh "cd ~/TheSpaghettiDetective && docker-compose up"
+cd ~/TheSpaghettiDetective
+docker-compose up
