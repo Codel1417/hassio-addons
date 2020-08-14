@@ -3,6 +3,7 @@
 
 export DOCKER_HOST=unix:///var/run/docker.sock
 rm -fr /var/run/docker.sock
+echo "{ \n "storage-driver": "overlay" \n}" | tee/etc/docker/daemon.json
 dockerd --host=unix:///var/run/docker.sock &
 cd ~/TheSpaghettiDetective
-docker-compose up
+docker-compose up -d
