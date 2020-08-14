@@ -26,7 +26,7 @@ RUN \
     && pip3 install --no-cache-dir "docker-compose==1.24.0" \
     && git clone https://github.com/TheSpaghettiDetective/TheSpaghettiDetective.git \
     && cd TheSpaghettiDetective \
-    && sd $oldVolume $newVolume docker-compose.yaml 
+    && sd $oldVolume $newVolume docker-compose.yaml \
     && rm -fr /var/run/docker.sock
 
 
