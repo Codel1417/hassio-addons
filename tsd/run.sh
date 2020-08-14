@@ -3,6 +3,6 @@
 
 export DOCKER_HOST=unix:///var/run/docker.sock
 rm -fr /var/run/docker.sock
-dockerd --host=unix:///var/run/docker.sock
+dockerd --host=unix:///var/run/docker.sock &
 cd ~/TheSpaghettiDetective
 docker-compose up
