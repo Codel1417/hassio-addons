@@ -5,6 +5,8 @@ ENV \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8
 
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 # Copy data for add-on
 COPY run.sh /
 RUN chmod a+x /run.sh
