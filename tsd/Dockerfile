@@ -1,4 +1,4 @@
-FROM docker:stable-dind
+FROM docker:stable-dind-rootless
 
 ENV \
     LANG=en_US.UTF-8 \
@@ -17,7 +17,7 @@ RUN \
         openssl-dev \
         gcc \
         git \
-        make \
+        make \  
         libc-dev \
         curl \
     && apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing --allow-untrusted \
@@ -28,7 +28,11 @@ RUN \
     && cd TheSpaghettiDetective \
     && sd $oldVolume $newVolume docker-compose.yaml \
     && rm -fr /var/run/docker.sock
-
+RUN \
+    export DOCKER_HOST=unix:///var/run/docker.sock \
+    && dockerd --host=unix:///var/run/docker.sock & \
+    && cd ~/TheSpaghettiDetective \
+    && docker-compose up  --no-start  --no-recreate
 
 # Copy data for add-on
 COPY run.sh /
